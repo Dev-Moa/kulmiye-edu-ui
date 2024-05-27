@@ -1,9 +1,19 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+import Navbar from './../components/Navbar.vue'
+import Hero from '@/components/Hero.vue'
+import Footer from '@/components/Footer.vue'
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <div class="flex flex-col mx-auto size-full">
+    <Navbar />
+
+    <main id="content">
+      <Hero />
+    </main>
+
+    <footer >
+      <Footer/>
+    </footer>
+  </div>
 </template>
