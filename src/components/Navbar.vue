@@ -30,11 +30,23 @@
             <div id="navbar-collapse-with-animation"
                 class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block">
                 <div class="flex flex-col md:flex-row md:items-center md:justify-end py-2 md:py-0 md:ps-7">
-                    <a class="py-3 ps-px md:px-3 font-medium text-blue-600" href="#" aria-current="page">Scholarship</a>
-                    <a class="py-3 ps-px md:px-3 font-medium text-gray-500 hover:text-gray-400" href="#">Universities</a>
-                    <a class="py-3 ps-px md:px-3 font-medium text-gray-500 hover:text-gray-400" href="#">About Us</a>
-
-
+                    <a class="py-3 ps-px md:px-3 font-medium text-blue-600" href="#" aria-current="page">
+                        <router-link to="/">Scholarship</router-link>
+                    </a>
+                    <a class="py-3 ps-px md:px-3 font-medium text-gray-500 hover:text-gray-400" href="#">
+                        <router-link to="/">Universities</router-link>
+                    </a>
+                    <a class="flex items-center gap-x-2 mr-4 font-medium text-gray-500 hover:text-blue-600 md:border-s md:border-gray-300 py-2 md:py-0 md:my-6 md:ps-6"
+                        href="#">
+                        <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                            <circle cx="12" cy="7" r="4" />
+                        </svg>
+                        <router-link to="/register">Register</router-link>
+                        
+                    </a>
                     <a class="flex items-center gap-x-2 font-medium text-gray-500 hover:text-blue-600 md:border-s md:border-gray-300 py-2 md:py-0 md:my-6 md:ps-6"
                         href="#">
                         <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -43,7 +55,8 @@
                             <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
                             <circle cx="12" cy="7" r="4" />
                         </svg>
-                        Log in
+                        <router-link to="/login">Log in</router-link>
+                        
                     </a>
                 </div>
             </div>

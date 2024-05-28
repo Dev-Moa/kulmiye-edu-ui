@@ -1,10 +1,17 @@
-=========Kulmiye Frontend =================
+=========Kulmiye Ui =================
 
 - SETUP PROJECT
   DONE- install npx @selemondev/create-vue3-app@latest
   DONE- setup project
   DONE- Hello world component
   DONE- install preline ui
+  DONE- Landing page
+  DONE- Push to github
 
-DONE- KULMIYE LANDING PAGE
-DONE- PUSH TO GITHUB 
+
+- WATCH VUE JS & PINIA COMPOSITION API COURSE (take notes)
+
+- CONNECT TO THE API
+  - auth
+  - list universities 
+  - searching programs and program scholarships
