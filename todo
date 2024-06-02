@@ -12,6 +12,7 @@
 - WATCH VUE JS & PINIA COMPOSITION API COURSE (take notes)
 
 - CONNECT TO THE API
-  - auth
+  DONE- auth - signup and signin 
+  - protected pages
   - list universities 
   - searching programs and program scholarships

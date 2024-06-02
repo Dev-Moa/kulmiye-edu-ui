@@ -22,21 +22,22 @@
           <div class="mt-5">
 
             <!-- Form -->
-            <form>
+            <form @submit.prevent="handleSubmit">
               <div class="grid gap-y-4">
                 <!-- Form Group -->
                 <div>
-                  <label for="email" class="block text-sm mb-2"
-                    >Email address</label
+                  <label for="username" class="block text-sm mb-2"
+                    >Username</label
                   >
                   <div class="relative">
                     <input
-                      type="email"
-                      id="email"
-                      name="email"
+                      type="text"
+                      id="username"
+                      name="username"
                       class="py-3 px-4 block w-full border shadow-sm rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none"
                       required
-                      aria-describedby="email-error"
+                      aria-describedby="username-error"
+                      v-model="formData.username"
                     />
                     <div
                       class="hidden absolute inset-y-0 end-0 pointer-events-none pe-3"
@@ -77,6 +78,7 @@
                   <div class="relative">
                     <input
                       type="password"
+                      v-model="formData.password"
                       id="password"
                       name="password"
                       class="py-3 px-4 block w-full border shadow-sm  rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none"
@@ -150,4 +152,57 @@
 import Navbar from "./../components/Navbar.vue";
 import Bg from "./../components/Bg.vue";
 import Footer from "./../components/Footer.vue";
+import { ref } from "vue";
+import { useRouter } from 'vue-router';
+import { useFetch } from "@vueuse/core";
+
+const router = useRouter();
+
+// formData
+const formData = ref({
+  username: "",
+  password: ""
+});
+
+// http variables
+const responseData = ref(null);
+const loading = ref(false);
+const error = ref(null);
+const status = ref(null);
+
+// handleSubmit
+const handleSubmit = async () => {
+  loading.value = true;
+  try {
+    const { data, error: fetchError, statusCode } = await useFetch('http://127.0.0.1:8000/auth/token/login/')
+      .post(formData.value)
+      .json();
+    
+    // updated values
+    responseData.value = data.value;
+    error.value = fetchError;
+    status.value = statusCode.value;
+
+    console.log('Status Code:', statusCode.value);
+    console.log('Data:', data.value);
+    console.log('Error:', fetchError);
+
+    if (!fetchError.value) {
+      // Accessing the auth token
+      const authToken = data.value.auth_token;
+      console.log('Auth Token:', authToken);
+
+      // Save the token in localStorage
+      localStorage.setItem('auth_token', authToken);
+
+      // Redirect to the home page
+      router.push({ name: 'home' });
+    }
+
+  } catch (error) {
+    console.error('Signin failed:', error);
+  } finally {
+    loading.value = false;
+  }
+};
 </script>
