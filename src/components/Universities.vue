@@ -14,7 +14,7 @@ const status = ref(null)
 onMounted(async()=>{
     loading.value = true
     try {
-        const {isFetching,data,error:fetchError,statusCode} = await useFetch('http://127.0.0.1:8000/university/').get().json()
+        const {isFetching,data,error:fetchError,statusCode} = await useFetch('https://kulmiye-api.up.railway.app/university/').get().json()
         //updated values
         loading.value = isFetching.value,
         responseData.value = data.value,

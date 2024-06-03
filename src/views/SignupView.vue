@@ -133,7 +133,7 @@ const responseData = ref(null);
 const loading = ref(false);
 const error = ref(null);
 const status = ref(null)
-const url = "http://127.0.0.1:8000/auth/users/"
+const url = "https://kulmiye-api.up.railway.app/auth/users/"
 
 const handleSubmit = async () => {
     loading.value = true
