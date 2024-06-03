@@ -10,7 +10,7 @@
             <h1 class="block text-2xl font-bold text-gray-800">Sign in</h1>
             <p class="mt-2 text-sm text-gray-600">
               Don't have an account yet?
-              <router-link :to="{name:'login'}" >
+              <router-link :to="{name:'register'}" >
                 <a
                 class="text-blue-600 decoration-2 hover:underline font-medium"
                 
