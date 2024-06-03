@@ -35,19 +35,6 @@ const router = createRouter({
       name: 'university-detail',
       component: DetailView
     },
-
-
-
-
-
-
-
-
-
-
-
-
-
     {
       path: '/register',
       name: 'register',

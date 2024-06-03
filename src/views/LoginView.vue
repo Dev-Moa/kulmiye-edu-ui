@@ -10,12 +10,14 @@
             <h1 class="block text-2xl font-bold text-gray-800">Sign in</h1>
             <p class="mt-2 text-sm text-gray-600">
               Don't have an account yet?
-              <a
+              <router-link :to="{name:'login'}" >
+                <a
                 class="text-blue-600 decoration-2 hover:underline font-medium"
-                href="../examples/html/signup.html"
+                
               >
                 Sign up here
               </a>
+              </router-link>
             </p>
           </div>
 
@@ -69,11 +71,7 @@
                     <label for="password" class="block text-sm mb-2"
                       >Password</label
                     >
-                    <a
-                      class="text-sm text-blue-600 decoration-2 hover:underline font-medium"
-                      href="../examples/html/recover-account.html"
-                      >Forgot password?</a
-                    >
+                    
                   </div>
                   <div class="relative">
                     <input
@@ -110,22 +108,6 @@
                   </p>
                 </div>
                 <!-- End Form Group -->
-
-                <!-- Checkbox -->
-                <div class="flex items-center">
-                  <div class="flex">
-                    <input
-                      id="remember-me"
-                      name="remember-me"
-                      type="checkbox"
-                      class="shrink-0 mt-0.5 border-gray-200 rounded text-blue-600 focus:ring-blue-500"
-                    />
-                  </div>
-                  <div class="ms-3">
-                    <label for="remember-me" class="text-sm">Remember me</label>
-                  </div>
-                </div>
-                <!-- End Checkbox -->
 
                 <button
                   type="submit"
