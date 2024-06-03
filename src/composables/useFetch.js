@@ -6,7 +6,7 @@ const useFetch = createFetch({
   baseUrl: baseURL,
   options: {
     async beforeFetch({ options }) {
-      const token = localStorage.getItem('authToken'); 
+      const token = localStorage.getItem('auth_token'); 
       options.headers = {
         ...options.headers,
         'Content-Type': 'application/json',
