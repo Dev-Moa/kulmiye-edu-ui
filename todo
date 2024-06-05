@@ -13,8 +13,7 @@
 
 - CONNECT TO THE API
   DONE- auth - signup and signin 
-  - protected pages
-  - list universities 
+  DONE- protected pages
+  DONE- list universities 
   - searching programs and program scholarships
-  - change all svg icons to vue-icons 
   - random profile pic generator

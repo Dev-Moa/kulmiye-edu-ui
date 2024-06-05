@@ -1,5 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router';
-import "preline/preline"; 
+import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue';
 import SignupView from '@/views/SignupView.vue';
 import LoginView from '@/views/LoginView.vue';
@@ -10,7 +9,7 @@ import Tpage from '@/views/Dashboard/Tpage.vue';
 import Dashboard from '@/views/Dashboard/Dashboard.vue';
 import ListView from '@/views/University/ListView.vue'
 import DetailView from '@/views/University/DetailView.vue'
-
+import ScholarshipListView from '@/views/Scholarships/ScholarshipListView.vue';
 
 
 const router = createRouter({
@@ -19,6 +18,16 @@ const router = createRouter({
   linkExactActiveClass: 'text-blue-600',
   routes: [
     // public routes
+    {
+      path: '/register',
+      name: 'register',
+      component: SignupView
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: LoginView
+    },
     {
       path: '/',
       name: 'home',
@@ -35,19 +44,15 @@ const router = createRouter({
       name: 'university-detail',
       component: DetailView
     },
-    {
-      path: '/register',
-      name: 'register',
-      component: SignupView
-    },
-    {
-      path: '/login',
-      name: 'login',
-      component: LoginView
-    },
 
+    {
+      path: '/scholarships',
+      name: 'scholarship-list',
+      component: ScholarshipListView
+    },
+    
 
-    // private routes
+    // admin routes
     {
       path: '/admin',
       component: SharedLayout,
@@ -83,6 +88,7 @@ router.beforeEach((to, from, next) => {
     next();
   }
 });
+
 router.afterEach((to, from, failure) => {
   if (!failure) {
     setTimeout(() => {
@@ -90,5 +96,4 @@ router.afterEach((to, from, failure) => {
     }, 100);
   }
 });
-
 export default router;

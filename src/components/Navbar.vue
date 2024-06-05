@@ -6,7 +6,7 @@
             <router-link :to="{name:'home'}">
                 <div class="flex items-center justify-between">
                     <img :src="logoo" class="w-auto h-10" alt="Logo">
-                    <a class="flex-none text-xl font-semibold" href="#" aria-label="Brand">Kulmiye</a>
+                    <a class="flex-none text-xl font-semibold font-sora" href="#" aria-label="Brand">Kulmiye</a>
                     <div class="md:hidden">
                         <button type="button"
                             class="hs-collapse-toggle size-8 flex justify-center items-center text-sm font-semibold rounded-full border border-gray-200 text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none"
@@ -33,11 +33,19 @@
                 class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block">
                 <div class="flex flex-col md:flex-row md:items-center md:justify-end py-2 md:py-0 md:ps-7">
                     
+                    <router-link :to="{name:'scholarship-list'}">
+                    <a class="flex items-center gap-x-2 mr-4 font-medium text-gray-500 hover:text-blue-600 md:border-s md:border-gray-300 py-2 md:py-0 md:my-6 md:ps-6"
+                        href="#">
+                        <ion-icon style="font-size: 24px;" name="book-outline"></ion-icon>
+                        Scholarships
+                        
+                    </a>
+                    </router-link>
                     <router-link :to="{name:'university'}">
                     <a class="flex items-center gap-x-2 mr-4 font-medium text-gray-500 hover:text-blue-600 md:border-s md:border-gray-300 py-2 md:py-0 md:my-6 md:ps-6"
                         href="#">
                         <ion-icon style="font-size: 24px;" name="school-outline"></ion-icon>
-                        <router-link :to="{name:'university'}">Universities</router-link>
+                        Universities
                         
                     </a>
                     </router-link>
@@ -45,7 +53,7 @@
                     <a class="flex items-center gap-x-2 mr-4 font-medium text-gray-500 hover:text-blue-600 md:border-s md:border-gray-300 py-2 md:py-0 md:my-6 md:ps-6"
                         href="#">
                         <ion-icon style="font-size: 24px;" name="person-outline"></ion-icon>
-                        <router-link to="/register">Register</router-link>
+                        Register
                         
                     </a>
                     </router-link>
@@ -53,7 +61,7 @@
                     <a class="flex items-center gap-x-2 mr-4 font-medium text-gray-500 hover:text-blue-600 md:border-s md:border-gray-300 py-2 md:py-0 md:my-6 md:ps-6"
                         href="#">
                         <ion-icon style="font-size: 24px;" name="log-in-outline"></ion-icon>
-                        <router-link to="/login">Login</router-link>
+                        Login
                         
                     </a>
                     </router-link>
