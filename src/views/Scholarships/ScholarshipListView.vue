@@ -38,62 +38,53 @@ console.log('scholarships', scholarships);
         <!-- ========== HEADER ========== -->
         <Navbar />
 
+
         <!-- ========== MAIN CONTENT ========== -->
-        <main class="px-10 flex flex-col sm:flex-row">
-                <!-- combobox -->
-                <div class="relative border p-2 max-h-60 ">
-                    <input type="text" placeholder="Select a scholarship"
-                        class="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500"
-                        list="scholarship-list" />
-                    <datalist id="scholarship-list">
-                        <option v-for="scholarship in scholarships" :key="scholarship.id"
-                            :value="scholarship.program.program_name">
-                            {{ scholarship.program.program_name }}
-                        </option>
-                    </datalist>
-                    <button class="p-4 mt-24 bg-blue-500 text-white rounded">Filter</button>
-                </div>
+        <main class="px-4 sm:px-10 flex flex-col sm:flex-row gap-6">
+            <!-- filter section -->
+            <div class="relative border p-4 rounded-lg bg-white shadow-sm ">
+                <input type="text" placeholder="Select a scholarship"
+                    class="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500"
+                    list="scholarship-list" />
+                <datalist id="scholarship-list">
+                    <option v-for="scholarship in scholarships" :key="scholarship.id"
+                        :value="scholarship.program.program_name">
+                        {{ scholarship.program.program_name }}
+                    </option>
+                </datalist>
+                <button class="w-full py-3 mt-4 bg-blue-500 text-white rounded-lg">Filter</button>
+            </div>
+
             <!-- list section -->
-            <ul v-if="scholarships" class="p-2 w-[55rem]">
-                <div class="bg-white border rounded-xl sm:w-[50rem] my-2 shadow-sm sm:flex" v-for="scholarship in scholarships" :key="scholarship.id">
+            <ul v-if="scholarships" class="space-y-6 sm:w-[70rem]">
+                <li v-for="scholarship in scholarships" :key="scholarship.id"
+                    class="bg-white border rounded-xl shadow-sm flex flex-col sm:flex-row">
                     <div
-                        class="flex-shrink-0 relative w-full rounded-t-xl overflow-hidden pt-[10%] sm:rounded-s-xl sm:max-w-60 md:rounded-se-none md:max-w-xs">
-                        <img class="size-full p-2 border-tlb absolute top-0 start-0 object-cover"
-                            :src="scholarship.university.images"
-                            alt="Image Description">
+                        class="relative w-full sm:w-1/3 h-48 sm:h-auto overflow-hidden rounded-t-xl sm:rounded-l-xl sm:rounded-tr-none">
+                        <img class="absolute inset-0 w-full h-full object-cover" :src="scholarship.university.images"
+                            alt="Image Description" />
                     </div>
-                    <div class="flex flex-col sm:flex-row flex-wrap">
-                        <div class="p-4 flex flex-col space-y-4 sm:p-5">
-                            <h3 class="text-lg font-bold text-gray-800">
-                                {{ scholarship.university.university_name }}
-                            </h3>
-                            <p class="mt-1 text-gray-500">
-                                {{ scholarship.program.program_name }}
-                            </p>
-                            <p class="mt-1 text-gray-500">
-                                Degree : {{ scholarship.program.degree.degree_name }}
-                            </p>
-                            <div >
-                                <p class="text-gray-500 mt-1">
-                                    Scholarship percentage : {{ scholarship.scholarship_percentage }} %
-                                </p>
-                            </div>
-                            <p class="mt-1 text-gray-500">
-                                Year : {{ scholarship.program.year }} years
-                            </p>
-                            
-                        </div>
-                        <div class="p-4 flex flex-col space-y-4 sm:p-5">
-                            <button class="p-4 bg-blue-500 text-white rounded">Apply Now</button>
-                        </div>
-
+                    <div class="p-4 flex flex-col space-y-4 sm:flex-1">
+                        <h3 class="text-lg font-bold text-gray-800">
+                            {{ scholarship.university.university_name }}
+                        </h3>
+                        <p class="text-gray-500">
+                            {{ scholarship.program.program_name }}
+                        </p>
+                        <p class="text-gray-500">
+                            Degree: {{ scholarship.program.degree.degree_name }}
+                        </p>
+                        <p class="text-gray-500">
+                            Scholarship percentage: {{ scholarship.scholarship_percentage }}%
+                        </p>
+                        <p class="text-gray-500">
+                            Year: {{ scholarship.program.year }} years
+                        </p>
+                        <button class="py-2 px-4 bg-blue-500 text-white rounded-lg mt-auto">Apply Now</button>
                     </div>
-                </div>
-
+                </li>
             </ul>
-
         </main>
-
         <!-- ========== FOOTER ========== -->
         <footer class="mt-auto text-center py-5">
             <Footer />
