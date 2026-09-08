@@ -1,4 +1,4 @@
-# Kulmiye Edu — Frontend
+# Kulmiye Edu: Frontend
 
 A university & scholarship discovery platform for Somali students.
 
@@ -6,7 +6,7 @@ A university & scholarship discovery platform for Somali students.
 
 ## Background
 
-Kulmiye Edu was my **first project**, built while I was working as an intern — the place where I learned full-stack delivery end to end, from first commit to production deployment.
+Kulmiye Edu was my **first project**, built while I was working as an intern. It was the place where I learned full-stack delivery end to end, from first commit to production deployment.
 
 ## Features
 
