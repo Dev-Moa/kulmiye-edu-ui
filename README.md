@@ -1,29 +1,37 @@
-# vue-js
+# Kulmiye Edu — Frontend
 
-This template should help get you started developing with Vue 3 in Vite.
+A university & scholarship discovery platform for Somali students.
 
-## Recommended IDE Setup
+**Kulmiye** (Somali for "coming together") connects students to universities, programs, degrees, and scholarships in one place.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Features
 
-## Customize configuration
+- 🔐 Authentication — sign up / sign in (JWT, protected routes)
+- 🏛️ University directory — browse universities and their programs
+- 🎓 Scholarships — discover and search program scholarships
+- 📊 Dashboard — personalized student dashboard
+- 📱 Responsive — Tailwind CSS + Preline UI
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## Tech stack
 
-## Project Setup
+- **Vue 3** (Composition API) + **Vite**
+- **Pinia** for state, **Vue Router** for routing
+- **Tailwind CSS 3** + **Preline UI** components
+- Deployed on **Railway** (Nixpacks + Caddy)
 
-```sh
+## Backend
+
+See [kulmiye-edu-api](https://github.com/Dev-Moa/kulmiye-edu-api) — Django 4.2 + Django REST Framework.
+
+## Local setup
+
+```bash
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+Build: `npm run build` · Preview: `npm run preview`
 
-```sh
-npm run build
-```
+## Status
+
+Actively maintained — next up: program & scholarship search, profile pictures.
