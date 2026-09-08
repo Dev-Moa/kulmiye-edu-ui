@@ -4,6 +4,10 @@ A university & scholarship discovery platform for Somali students.
 
 **Kulmiye** (Somali for "coming together") connects students to universities, programs, degrees, and scholarships in one place.
 
+## Background
+
+Kulmiye Edu was my **first project**, built while I was working as an intern — the place where I learned full-stack delivery end to end, from first commit to production deployment.
+
 ## Features
 
 - 🔐 Authentication — sign up / sign in (JWT, protected routes)
